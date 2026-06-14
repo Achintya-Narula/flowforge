@@ -57,6 +57,18 @@ On macOS/Linux:
 
 By default, the backend starts on port `8080`.
 
+## Continuous Integration
+
+GitHub Actions runs backend CI for relevant pull requests and pushes to `main` when backend files or the workflow file change. The workflow can also be run manually from GitHub Actions.
+
+CI executes the backend test suite with:
+
+```sh
+./mvnw --batch-mode --no-transfer-progress test
+```
+
+Developers should run the backend tests locally before pushing changes.
+
 ## Test The Health Endpoint
 
 After starting the backend, call:
